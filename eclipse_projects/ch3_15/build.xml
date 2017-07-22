@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="Gaining Access to the System’s Environment Variables" basedir="." default="properties.environment">
+		<target name="properties.environment"><echo message="${ant.project.name}"/>	
+		<property environment="env"/>
+		<echo message="Built on: ${env.OS} ${env.PROCESSOR_ARCHITECTURE}"/>
+		<echo message="ANT_HOME: ${env.ANT_HOME}"/>
+		<echo message="ANT_HOME: ${env.ant_home}"/>
+		</target>
+</project>

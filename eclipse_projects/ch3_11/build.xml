@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="Setting a Property with a Name-Value Pair" basedir="." default="properties.custom">
+	<target name="properties.custom">
+		<echo message="${ant.project.name}"/>
+		
+		<property name="build.no" value="1.1" />
+		<echo message="Build no. = ${build.no}" />
+	</target>
+</project>

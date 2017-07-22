@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project name="Loading a Local Property File" 
+	basedir="." default="properties.localfile">
+
+
+	<target name="properties.localfile">
+		<echo message="${ant.project.name}" />
+
+		<property file="build.properties" />
+		<path id="build.classpath.id">
+			<pathelement path="${build.classpath}" />
+		</path>
+		<property name="build.classpath.property" refid="build.classpath.id" />
+		<echo message="Server URL: ${server.url}" />
+		<echo message="Build classpath: ${build.classpath}" />
+		<echo message="Build classpath converted: ${build.classpath.property}" />
+	</target>
+
+</project>

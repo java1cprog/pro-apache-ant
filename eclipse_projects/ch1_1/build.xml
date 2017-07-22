@@ -1,0 +1,7 @@
+<project name="Example Application Build" default="default" basedir=".">
+	<!-- Compile the stand-alone application -->
+	<target name="default">
+		<javac includeantruntime="false" srcdir="./src" destdir="bin" />
+		<echo message="Application compiled" />
+	</target>
+</project>

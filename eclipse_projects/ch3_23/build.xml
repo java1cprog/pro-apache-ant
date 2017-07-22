@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<project name="Setting a Classpath Where a Properties File Is Located" 
+	basedir="." default="properties.resourcefile">
+	<echo message="${ant.project.name}" />
+
+	<target name="properties.resourcefile">
+		<!--
+	<property resource="build.res.properties" classpath="./lib"/>
+	-->
+		<property resource="build.res.properties">
+			<classpath path="./lib"/>
+		</property>
+		<path id="build.classpath.id">
+			<pathelement path="${build.classpath}"/>
+		</path>
+		<property name="build.classpath.property" refid="build.classpath.id"/>
+		<echo message="Server URL: ${server.url}"/>
+		<echo message="Build classpath: ${build.classpath}"/>
+		<echo message="Build classpath converted: ${build.classpath.property}"/>
+		
+		<path id="project.classpath"/>
+		
+		<property resource="build.res.properties" classpathref="project.classpath"/>
+		
+	</target>
+</project>

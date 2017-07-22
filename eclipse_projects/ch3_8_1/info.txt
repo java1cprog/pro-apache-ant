@@ -1,0 +1,2 @@
+It is not possible remove "name" attribute from target node.
+The Error will be.

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project name="Adding a Prefix to Imported Properties" basedir="." default="properties.localfile.prefix">
+
+
+	<target name="properties.localfile.prefix">
+		<property file="build.properties" prefix="imported" />
+		<path id="build.classpath.id">
+			<pathelement path="${imported.build.classpath}" />
+		</path>
+		<property name="build.classpath.property" refid="build.classpath.id" />
+		<echo message="Server URL: ${imported.server.url}" />
+		<echo message="Build classpath: ${imported.build.classpath}" />
+		<echo message="Build classpath converted: ${build.classpath.property}" />
+
+		<path id="build.classpath.id2">
+			<pathelement path="${imported.mysql.jar}" />
+			<pathelement path="${imported.j2ee.jar}" />
+			<pathelement path="${imported.jsp.jar}" />
+			<pathelement path="${imported.servlet.jar}" />
+		</path>
+
+		<property name="build2.classpath.property" refid="build.classpath.id2" />
+		
+		<echo message="------------------------" />
+		<echo message="Server URL: ${imported.server.url}" />
+		<echo message="Build classpath converted: ${build2.classpath.property}" />
+		
+	</target>
+
+</project>

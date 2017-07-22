@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="Setting a Property to a Filename Using a Relative Path" basedir="." default="properties.custom">
+	<target name="properties.custom">
+		<echo message="${ant.project.name}" />
+
+		<property name="project.dtd" location="project.dtd" />
+		<echo message="Project name: ${ant.project.name}" />
+		<echo message="Location of project.dtd: ${project.dtd}" />
+	</target>
+</project>

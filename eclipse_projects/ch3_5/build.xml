@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="Apache Ant Book Project" basedir="." default="build-dtd">
+	<target name="build-dtd" description="Create an Ant DTD">
+		<echo message="${ant.project.name}"/>
+		
+		<antstructure output="./project.dtd" />
+	</target>
+</project>
+

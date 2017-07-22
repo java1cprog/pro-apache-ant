@@ -1,0 +1,2 @@
+BUILD FAILED
+..\project.dtd:3148: The name token is required in the enumerated type list for the "serverlanguagecodeconfig" attribute declaration.

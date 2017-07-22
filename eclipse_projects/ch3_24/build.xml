@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="Retrieving Properties from a Remote File" 
+	basedir="." default="properties.url">
+	<echo message="${ant.project.name}" />
+
+	<target name="properties.url">
+	<property url="http://localhost:8080/antBook/properties/build.properties"/>
+	<path id="build.classpath.id">
+	<pathelement path="${build.classpath}"/>
+	</path>
+	<property name="build.classpath.property" refid="build.classpath.id"/>
+	<echo message="Server URL: ${server.url}"/>
+	<echo message="Build classpath: ${build.classpath}"/>
+	<echo message="Build classpath converted: ${build.classpath.property}"/>
+	</target>
+	
+</project>

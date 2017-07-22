@@ -1,0 +1,1 @@
+ant -Dproperty.file.example=command-line

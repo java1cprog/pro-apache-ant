@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="Building the Classpath in the Build File with Environment Variables" basedir="." default="properties.file">
+	<target name="properties.file">
+		<echo message="${ant.project.name}" />
+		<property file="build.properties" />
+		<property environment="env" />
+
+		<path id="build.classpath.id">
+			<!--<pathelement path="${env.J2EE_HOME}/${j2ee.jar}" /> -->
+			<pathelement path="${env.CATALINA_HOME}/${jsp.jar}" />
+			<pathelement path="${env.CATALINA_HOME}/${servlet.jar}" />
+			<pathelement path="${env.CATALINA_HOME}/${mysql.jar}" />
+		</path>
+
+		<property name="build.classpath" refid="build.classpath.id" />
+		<echo message="${build.classpath}" />
+	</target>
+</project>

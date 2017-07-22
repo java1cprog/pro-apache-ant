@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="The Basic Syntax of a Properties File" basedir="." default="properties.file">
+	<target name="properties.file">
+		<echo message="${ant.project.name}" />
+		
+		<echo message="Property value from a file: ${my.property}" />
+	</target>
+</project>

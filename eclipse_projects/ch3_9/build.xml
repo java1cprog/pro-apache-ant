@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="Building a Platform-Specific Path" basedir="." default="build.path">
+	<target name="build.path">
+		<echo message="${ant.project.name}" />
+		<echo message="File: ${basedir}${file.separator}build.xml" />
+		<echo message="Path: ${basedir}${file.separator}build.xml${path.separator}${basedir}${file.separator}build.properties" />
+	</target>
+</project>

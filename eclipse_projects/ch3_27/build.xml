@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="Using a File Set As Part of an &lt;uptodate&gt; Check" basedir="." default="compile">
+
+	<echo message="${ant.project.name}" />
+
+	<fileset dir="." id="uptodate.id">
+		<include name="bin/jstl/One.java" />
+	</fileset>
+	<uptodate property="uptodate" targetfile="src/jstl/One.java">
+		<srcfiles refid="uptodate.id" />
+	</uptodate>
+	<echo message="${uptodate}" />
+	<target name="compile" if="uptodate">
+		<echo message="File changed: ${uptodate}" />
+	</target>
+
+</project>

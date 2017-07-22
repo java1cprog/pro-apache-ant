@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project name="Ant Converts a String into the Appropriate Path" basedir="." default="properties.custom">
+	<target name="properties.custom">
+		<echo message="${ant.project.name}"/>	
+		
+		
+	<!-- Windows users should leave this line uncommented -->
+	<property name="build.path"
+	value="${basedir}/build.xml:${basedir}/build.properties"/>
+	<!-- Unix users should remove the above line
+	and uncomment the below line -->
+	<!--
+	<property name="build.path"
+	value="${basedir}\build.xml;${basedir}\build.properties"/>
+	-->
+	<path id="build.path.id">
+	<pathelement path="${build.path}"/>
+	</path>
+	<property name="build.path.property" refid="build.path.id"/>
+	<!-- The converted string that Ant uses as a path -->
+	<echo message="Converted string: ${build.path.property}"/>
+	<!-- The unconverted string, which Ant treats as a string -->
+	<echo message="Path: ${build.path}"/>
+	</target>
+</project>

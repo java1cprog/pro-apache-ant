@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="Removing References to Application “Home” Directories" basedir="." default="properties.file">
+	<target name="properties.file">
+		<echo message="${ant.project.name}" />
+		
+		
+	</target>
+</project>

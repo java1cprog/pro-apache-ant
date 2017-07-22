@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<project name="A Property Marker in the &lt;project&gt; Element" basedir="." default="build-dtd">
+	<target name="pre-dtd">
+
+	</target>
+	<target name="build-dtd" depends="pre-dtd" description="Create an Ant DTD">
+		<echo message="${ant.project.name}"/>
+		
+		<antstructure output="./project.dtd" />
+	</target>
+</project>

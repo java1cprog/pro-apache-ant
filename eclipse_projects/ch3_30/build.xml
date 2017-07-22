@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project name="Using the &lt;os&gt; Element’s family Attribute to Test the Operating System" basedir="." default="default">
+	
+	<echo message="${ant.project.name}" level="info"/>
+
+	<condition property="is.windows">
+		<os family="windows" />
+	</condition>
+	
+	<condition property="is.unix">
+		<os family="unix" />
+	</condition>
+	
+	<target name="do-windows" if="is.windows">
+		<echo message="This is Windows" />
+	</target>
+	
+	<target name="do-unix" if="is.unix">
+		<echo message="This is Unix" />
+	</target>
+	
+	<target name="default" depends="do-unix,do-windows"></target>
+	
+</project>

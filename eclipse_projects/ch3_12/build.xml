@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="Setting a Property to the Value of Another Property" basedir="." default="properties.custom">
+	<target name="properties.custom">
+		<echo message="${ant.project.name}"/>
+		
+		<property name="fs" value="${file.separator}" />
+		<property name="ps" value="${path.separator}" />
+		<echo message="File: ${basedir}${fs}build.xml" />
+		<echo message="Path: ${basedir}${fs}build.xml${ps}${basedir}${fs}build.properties" />
+	</target>
+</project>

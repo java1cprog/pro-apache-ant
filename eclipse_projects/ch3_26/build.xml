@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="Using the &lt;available&gt; Element to Check for the Existence of Third-Party Files" basedir="." default="build-jstl">
+	<echo message="${ant.project.name}" />
+	<property name="jstl.src" value="./src/jstl" />
+	<property name="jstl.jar" value="./lib/jstl.jar" />
+	
+	<available property="jstl.src.exists" file="${jstl.src}" />
+	<available property="jstl.jar.exists" file="${jstl.jar}" />
+	
+	<target name="checkout-jstl" unless="jstl.src.exists">
+		<echo message="Checking out ${jstl.jar}" />
+
+	</target>
+	<target name="build-jstl" depends="checkout-jstl" unless="jstl.jar.exists">
+		<echo message="Building ${jstl.jar}" />
+
+	</target>
+</project>

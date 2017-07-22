@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project name="Apache Ant Properties Project" basedir="." default="print-file">
+	
+	<property name="property.example" value="Global" />
+	<property file="build.properties" />
+	<property file="build.properties.local" />
+	<target name="print-global">
+		<echo message="In print-global" />
+		<echo message="The value of property.example is: ${property.example}" />
+	</target>
+	<target name="print-target" depends="print-global">
+		<property name="property.example" value="Target" />
+		<echo message="In print-target" />
+		<echo message="The value of property.example is: ${property.example}" />
+	</target>
+	<target name="print-file" depends="print-target">
+		<property name="property.file.example" value="build.xml" />
+		<echo message="In print-file" />
+		<echo>
+			The value of property.file.example is: ${property.file.example}
+		</echo>
+	</target>
+</project>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project name="Using an Existing Pathlike Structure As a Classpath" basedir=".">
+
+	<echo message="${ant.project.name}" level="info" />
+
+	<property environment="env" />
+	<parenttask>
+		<classpath>
+			<pathelement path="${env.ANT_HOME}/lib/ant.jar" />
+		</classpath>
+	</parenttask>
+	<parenttask>
+		<!-- A short-form version of the above -->
+		<classpath path="${env.ANT_HOME}/lib/ant.jar" />
+	</parenttask>
+	<parenttask>
+		<classpath>
+			<path refid="build.path.id" />
+			<pathelement path="${env.ANT_HOME}/lib/mysql.jar" />
+		</classpath>
+		<parenttask>
+			<parenttask>
+				<classpath refid="build.path.id" />
+			</parenttask>
+		</parenttask>
+	</parenttask>
+	
+	<property name="build.path.complete" refid="build.path.complete" />
+
+	<echo message="${build.path.complete}" />
+
+</project>

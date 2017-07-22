@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project name="Building Pathlike Structures" basedir="." >
+
+	<echo message="${ant.project.name}" level="info" />
+
+	<property environment="env" />
+	
+	<path id="build.path.id">
+		<pathelement path="${env.ANT_HOME}/lib/ant.jar" />
+	</path>
+	
+	<!-- A short-form version of the above -->
+	<path id="build.path.id" path="${env.ANT_HOME}/lib/ant.jar" />
+	
+	<path id="build.path.complete">
+		<path refid="build.path.id" />
+		<pathelement path="${env.ANT_HOME}/lib/mysql.jar" />
+	</path>
+
+	<property name="build.path.complete" refid="build.path.complete"/>
+	
+	<echo message="${build.path.complete}" />
+	
+</project>

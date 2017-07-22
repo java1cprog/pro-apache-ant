@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="A File Set Reference Is Tested Using the &lt;isreference&gt; Test" basedir="." default="fileset-prepare">
+
+	<echo message="${ant.project.name}" level="info" />
+
+	<fileset dir="." id="uptodate.id">
+			<include name="bin/jstl/One.java" />
+		</fileset>
+	
+	<condition property="is.fileset">
+		<isreference refid="uptodate.id" type="fileset" />
+	</condition>
+	<target name="fileset-prepare">
+		<echo message="Value of is.fileset = ${is.fileset}" />
+	</target>
+
+</project>
